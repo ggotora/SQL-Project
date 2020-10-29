@@ -33,7 +33,9 @@ WHERE length(name)=5 and region='Europe'``
 
 ## Answer
 <img alt='' src='que4.png'>
+
 ## Question 5
+
 Pick the result you would obtain from this code:
 
 ``SELECT name, area*2 FROM world WHERE population = 64000``
