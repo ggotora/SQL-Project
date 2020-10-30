@@ -1,6 +1,6 @@
 # SQL Project
 ## Project specifications
-> This project required going to **[SQL Zoo](https://sqlzoo.net/wiki/SQL_Tutorial)** I was to do the quizzes from Tutorials 0-
+> This project required going through quizzes 0 - 9 on **[SQL Zoo](https://sqlzoo.net/wiki/SQL_Tutorial)** 
 
 # Quiz 1
 
