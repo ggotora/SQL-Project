@@ -150,6 +150,51 @@ Select the code which shows the years when a Medicine award was given but no Pea
 ## Answer
 <img src='quiz3que7.png'>
 
+# Exercise 4 SELECT in SELECT
+
+<img src='select_within_select.png'>
+
+## Challenge 1
+List each country name where the population is larger than that of 'Russia'.
+## Answer 
+
+`` SELECT name FROM world WHERE population > (SELECT population FROM world WHERE name='Russia')``
+
+## Challenge 2
+Show the countries in Europe with a per capita GDP greater than 'United Kingdom'.
+## Answer 
+`` SELECT name FROM world WHERE continent IN ('Europe') AND gdp/population > (SELECT gdp/population FROM world WHERE name = 'United Kingdom'); ``
+
+## Challenge 3
+List the name and continent of countries in the continents containing either Argentina or Australia. Order by name of the country.
+
+## Answer 
+``SELECT name, continent FROM world WHERE continent = (SELECT continent FROM world WHERE name = 'Argentina') OR continent = (SELECT continent FROM world WHERE name = 'Australia') ORDER BY name;``
+
+## Challenge 4
+Which country has a population that is more than Canada but less than Poland? Show the name and the population.
+## Answer 
+
+``SELECT name, population FROM world WHERE population > (SELECT population FROM world WHERE name = 'Canada') AND population < (SELECT population FROM world WHERE name = 'Poland');``
+
+## Challenge 5
+Germany (population 80 million) has the largest population of the countries in Europe. Austria (population 8.5 million) has 11% of the population of Germany.
+
+Show the name and the population of each country in Europe. Show the population as a percentage of the population of Germany. Format should be Albania 3% etc
+ ## Answer 
+`` SELECT name, CONCAT(ROUND(100* population/(SELECT population FROM world WHERE name = 'Germany')), '%') FROM world WHERE continent = 'Europe';``
+
+## Challenge 6
+Which countries have a GDP greater than every country in Europe? [Give the name only.] (Some countries may have NULL gdp values)
+## Answer 
+``SELECT name FROM world WHERE gdp > ALL(SELECT gdp FROM world WHERE continent = 'Europe' AND gdp > 0)``
+
+## Challenge 7
+Find the largest country (by area) in each continent, show the continent, the name and the area:
+
+
+
+
 
 
 
@@ -158,9 +203,9 @@ Select the code which shows the years when a Medicine award was given but no Pea
 _______________________________
 
 
-## 👨🏽‍💻 👨🏿‍💻
+## 👨🏽‍💻 
 👤 **Github: [@ggotora](https://github.com/ggotora)**
-👤 **Linkedin: [@ggotora](https://www.linkedin.com/in/gilbert-gotora/)**
+👤 **Linkedin: [@gilbert-gotora](https://www.linkedin.com/in/gilbert-gotora/)**
 
 ## 🤝 Contributing
 
